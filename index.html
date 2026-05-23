@@ -1,0 +1,1197 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>German Piñeres — Desarrollo Web, Marketing Digital & Fotografía Profesional en Ocaña</title>
+  <meta name="description" content="Desarrollo web profesional, gestión de Meta Ads y fotografía con drone en Ocaña, Norte de Santander. Todo en un solo lugar para impulsar tu negocio.">
+  <meta name="keywords" content="desarrollo web Ocaña, marketing digital Ocaña, fotografía drone Norte de Santander, landing page Colombia, Meta Ads Colombia">
+  <meta property="og:title" content="German Piñeres | Web · Marketing · Fotografía">
+  <meta property="og:description" content="Soluciones digitales completas para negocios en Ocaña, Norte de Santander.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:        #3B82F6;
+      --blue-dark:   #2563EB;
+      --blue-light:  #EFF6FF;
+      --blue-mid:    #DBEAFE;
+      --purple:      #8B5CF6;
+      --purple-light:#F5F3FF;
+      --green:       #10B981;
+      --green-light: #ECFDF5;
+      --orange:      #F59E0B;
+      --orange-light:#FFFBEB;
+
+      --gray-50:  #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --r-sm: 8px;
+      --r-md: 12px;
+      --r-lg: 16px;
+      --r-xl: 24px;
+
+      --sh-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+      --sh-md: 0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
+      --sh-lg: 0 12px 32px rgba(0,0,0,.09), 0 4px 8px rgba(0,0,0,.04);
+      --sh-xl: 0 24px 48px rgba(0,0,0,.12), 0 8px 16px rgba(0,0,0,.06);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--gray-900);
+      background: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: var(--blue-light);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 3.8vw, 40px);
+      font-weight: 800;
+      color: var(--gray-900);
+      line-height: 1.15;
+      letter-spacing: -.025em;
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: var(--r-sm);
+      border: 2px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .18s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(59,130,246,.3);
+    }
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      box-shadow: 0 4px 20px rgba(59,130,246,.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gray-700);
+      border-color: var(--gray-300);
+    }
+    .btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--blue);
+      font-weight: 700;
+    }
+    .btn-white:hover {
+      background: rgba(255,255,255,.9);
+      transform: translateY(-1px);
+    }
+
+    .chk {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--green-light);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* HEADER */
+    #header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(229,231,235,.6);
+      transition: box-shadow .2s;
+    }
+    #header.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,.07); }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.5px;
+      flex-shrink: 0;
+    }
+
+    .logo-name { font-size: 15px; font-weight: 700; color: var(--gray-800); }
+
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--gray-700);
+      border-radius: 2px;
+      transition: all .25s;
+    }
+
+    #mobilePanel {
+      display: none;
+      border-top: 1px solid var(--gray-100);
+      background: #fff;
+    }
+    #mobilePanel .container {
+      padding-top: 16px;
+      padding-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    #mobilePanel a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gray-700);
+      text-decoration: none;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    #mobilePanel a:last-child { border-bottom: none; }
+
+    /* HERO */
+    #hero {
+      position: relative;
+      background: linear-gradient(150deg, #F8FAFF 0%, #EFF6FF 40%, #F0FDF4 100%);
+      padding: 100px 0 88px;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: .35;
+      pointer-events: none;
+    }
+    .blob-1 { width: 640px; height: 640px; background: radial-gradient(circle, rgba(59,130,246,.18), transparent 70%); top: -240px; right: -120px; }
+    .blob-2 { width: 440px; height: 440px; background: radial-gradient(circle, rgba(139,92,246,.14), transparent 70%); bottom: -160px; left: -80px; }
+    .blob-3 { width: 320px; height: 320px; background: radial-gradient(circle, rgba(16,185,129,.1), transparent 70%); top: 40%; left: 45%; }
+
+    .hero-inner { position: relative; z-index: 1; text-align: center; }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--blue);
+      background: rgba(239,246,255,.9);
+      border: 1px solid rgba(59,130,246,.2);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+
+    .hero-h1 {
+      font-size: clamp(34px, 5.5vw, 64px);
+      font-weight: 900;
+      color: var(--gray-900);
+      line-height: 1.1;
+      letter-spacing: -.03em;
+      max-width: 880px;
+      margin: 0 auto 22px;
+    }
+
+    .hero-h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--gray-500);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 64px;
+    }
+    .hero-ctas .btn { padding: 14px 28px; font-size: 15px; border-radius: 10px; }
+
+    .stats-strip {
+      display: inline-flex;
+      background: rgba(255,255,255,.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(229,231,235,.7);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--sh-sm);
+    }
+
+    .stat-item {
+      padding: 20px 36px;
+      text-align: center;
+      border-right: 1px solid var(--gray-200);
+    }
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      display: block;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--gray-900);
+      letter-spacing: -.02em;
+      line-height: 1;
+    }
+    .stat-label {
+      display: block;
+      font-size: 12px;
+      color: var(--gray-500);
+      font-weight: 500;
+      margin-top: 5px;
+    }
+
+    /* SERVICES */
+    #servicios { padding: 96px 0; background: var(--gray-50); }
+
+    .section-head { text-align: center; margin-bottom: 60px; }
+    .section-head .section-sub { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-bottom: 28px;
+    }
+
+    .srv-card {
+      position: relative;
+      background: #fff;
+      border-radius: var(--r-lg);
+      padding: 32px 26px 28px;
+      border: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      transition: all .25s ease;
+    }
+    .srv-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sh-xl);
+      border-color: transparent;
+    }
+    .srv-card.featured {
+      border: 2px solid var(--blue);
+      box-shadow: var(--sh-lg);
+      background: linear-gradient(180deg, #fff 0%, #F8FBFF 100%);
+    }
+
+    .srv-top-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      padding: 4px 13px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .badge-blue  { background: var(--blue);  color: #fff; }
+    .badge-green { background: var(--green); color: #fff; }
+
+    .srv-icon   { font-size: 30px; margin-bottom: 14px; display: block; }
+    .srv-name   { font-size: 17px; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
+    .srv-price  { font-size: 21px; font-weight: 800; color: var(--blue); letter-spacing: -.02em; margin-bottom: 3px; }
+    .srv-del    { font-size: 12px; color: var(--gray-400); margin-bottom: 18px; }
+
+    .photo-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--orange);
+      background: var(--orange-light);
+      border: 1px solid rgba(245,158,11,.2);
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+    }
+
+    .srv-features {
+      list-style: none;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .srv-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 13px;
+      color: var(--gray-600);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .srv-features li:last-child { border-bottom: none; }
+
+    .pkg-banner {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+      border-radius: var(--r-lg);
+      padding: 36px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      color: #fff;
+    }
+
+    .pkg-eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+
+    .pkg-title { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .pkg-desc  { font-size: 14px; opacity: .85; max-width: 500px; line-height: 1.6; }
+
+    .pkg-right { text-align: center; flex-shrink: 0; }
+    .pkg-price { font-size: 30px; font-weight: 900; letter-spacing: -.02em; }
+    .pkg-save  { font-size: 13px; opacity: .75; margin-top: 4px; margin-bottom: 20px; }
+
+    /* PROJECTS */
+    #proyectos { padding: 96px 0; background: #fff; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .proj-card {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      background: #fff;
+      transition: all .25s ease;
+    }
+    .proj-card:hover {
+      box-shadow: var(--sh-xl);
+      transform: translateY(-4px);
+      border-color: transparent;
+    }
+
+    .proj-img {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: var(--gray-100);
+    }
+    .proj-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform .4s ease;
+    }
+    .proj-card:hover .proj-img img { transform: scale(1.05); }
+
+    .proj-chip {
+      position: absolute;
+      top: 12px; left: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      background: rgba(0,0,0,.62);
+      backdrop-filter: blur(8px);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    .proj-body { padding: 24px; }
+    .proj-name { font-size: 17px; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
+    .proj-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; margin-bottom: 14px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 100px; }
+    .tag-blue   { color: var(--blue);   background: var(--blue-light);   }
+    .tag-orange { color: var(--orange); background: var(--orange-light); }
+    .tag-purple { color: var(--purple); background: var(--purple-light); }
+
+    /* RESULTS */
+    #resultados { padding: 96px 0; background: var(--gray-50); }
+
+    .results-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .results-client { font-size: 13px; font-weight: 700; color: var(--green); letter-spacing: .04em; margin-bottom: 8px; }
+    .results-desc   { font-size: 16px; color: var(--gray-600); line-height: 1.7; margin-bottom: 28px; }
+
+    .results-highlight {
+      background: #fff;
+      border-left: 4px solid var(--blue);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      padding: 22px 24px;
+      border: 1px solid var(--gray-200);
+      border-left: 4px solid var(--blue);
+    }
+
+    .hl-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--blue); margin-bottom: 8px; }
+    .hl-text  { font-size: 15px; color: var(--gray-700); line-height: 1.6; }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .metric-box {
+      background: #fff;
+      border-radius: var(--r-md);
+      padding: 24px 20px;
+      border: 1px solid var(--gray-200);
+      transition: all .2s;
+    }
+    .metric-box:hover { box-shadow: var(--sh-md); border-color: transparent; }
+
+    .metric-num   { font-size: 34px; font-weight: 900; letter-spacing: -.03em; line-height: 1; margin-bottom: 6px; }
+    .metric-label { font-size: 12px; color: var(--gray-500); font-weight: 500; }
+
+    .campaign-img-box {
+      margin-top: 14px;
+      background: #fff;
+      border-radius: var(--r-md);
+      border: 1px solid var(--gray-200);
+      padding: 16px;
+      text-align: center;
+    }
+    .campaign-img-box span { display: block; font-size: 12px; color: var(--gray-400); margin-bottom: 10px; }
+    .campaign-img-box img  { max-width: 100%; border-radius: var(--r-sm); }
+
+    /* WHY ME */
+    #por-que { padding: 96px 0; background: #fff; }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .why-card {
+      text-align: center;
+      padding: 40px 28px;
+      border-radius: var(--r-lg);
+      border: 1px solid var(--gray-200);
+      transition: all .25s;
+    }
+    .why-card:hover { box-shadow: var(--sh-lg); border-color: transparent; transform: translateY(-4px); }
+
+    .why-icon-wrap {
+      width: 64px; height: 64px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 22px;
+    }
+
+    .why-title { font-size: 18px; font-weight: 700; color: var(--gray-900); margin-bottom: 12px; }
+    .why-desc  { font-size: 14px; color: var(--gray-500); line-height: 1.7; }
+
+    /* CONTACT */
+    #contacto { padding: 96px 0; background: var(--gray-50); }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .contact-heading {
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 800;
+      color: var(--gray-900);
+      letter-spacing: -.025em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .contact-sub { font-size: 16px; color: var(--gray-500); line-height: 1.7; margin-bottom: 40px; }
+
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+    .contact-item { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--gray-700); }
+
+    .contact-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    .ci-title { font-size: 13px; font-weight: 600; color: var(--gray-900); }
+    .ci-val   { font-size: 13px; color: var(--gray-500); }
+
+    .form-card {
+      background: #fff;
+      border-radius: var(--r-xl);
+      padding: 40px 36px;
+      box-shadow: var(--sh-xl);
+      border: 1px solid var(--gray-200);
+    }
+
+    .form-title { font-size: 20px; font-weight: 700; color: var(--gray-900); margin-bottom: 28px; }
+
+    .fg { margin-bottom: 18px; }
+    .fl { display: block; font-size: 13px; font-weight: 600; color: var(--gray-700); margin-bottom: 6px; }
+
+    .fi, .fs, .ft {
+      width: 100%;
+      font-family: var(--font);
+      font-size: 14px;
+      color: var(--gray-900);
+      background: var(--gray-50);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--r-sm);
+      padding: 11px 14px;
+      outline: none;
+      transition: border-color .18s, box-shadow .18s, background .18s;
+      appearance: none;
+    }
+    .fi:focus, .fs:focus, .ft:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(59,130,246,.12);
+      background: #fff;
+    }
+    .ft { min-height: 112px; resize: vertical; }
+
+    .select-wrap { position: relative; }
+    .select-wrap::after {
+      content: '▾';
+      position: absolute;
+      right: 13px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      color: var(--gray-400);
+      pointer-events: none;
+    }
+
+    .btn-submit { width: 100%; padding: 14px; font-size: 15px; border-radius: var(--r-sm); justify-content: center; }
+
+    /* FOOTER */
+    footer { background: var(--gray-800); color: #fff; padding: 52px 0 32px; }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+
+    .footer-mark {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .footer-name    { font-size: 15px; font-weight: 700; }
+    .footer-tagline { font-size: 12px; color: rgba(255,255,255,.45); max-width: 280px; line-height: 1.5; }
+
+    .footer-nav { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-nav a { font-size: 14px; color: rgba(255,255,255,.55); text-decoration: none; transition: color .15s; }
+    .footer-nav a:hover { color: #fff; }
+
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .footer-copy   { font-size: 12px; color: rgba(255,255,255,.35); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .results-inner { grid-template-columns: 1fr; gap: 52px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .stats-strip { flex-direction: column; width: 100%; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--gray-200); }
+      .stat-item:last-child { border-bottom: none; }
+
+      .why-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .pkg-banner { flex-direction: column; text-align: center; }
+      .pkg-right  { width: 100%; }
+
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-ctas .btn { justify-content: center; }
+    }
+
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .metrics-grid  { grid-template-columns: 1fr; }
+      .container     { padding: 0 16px; }
+      .form-card     { padding: 28px 22px; }
+      .pkg-banner    { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark">GP</div>
+        <span class="logo-name">German Piñeres</span>
+      </a>
+
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <a href="#contacto" class="btn btn-primary nav-cta" style="padding:10px 20px;font-size:14px;">Hablemos</a>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobilePanel">
+      <div class="container">
+        <a href="#servicios" onclick="closeMenu()">Servicios</a>
+        <a href="#proyectos" onclick="closeMenu()">Proyectos</a>
+        <a href="#resultados" onclick="closeMenu()">Resultados</a>
+        <a href="#contacto" onclick="closeMenu()">Contacto</a>
+        <a href="#contacto" onclick="closeMenu()" class="btn btn-primary" style="margin-top:8px;justify-content:center;">Hablemos</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-pill">
+        🚁 Fotografía con drone disponible &nbsp;·&nbsp; Ocaña, Norte de Santander
+      </div>
+
+      <h1 class="hero-h1">
+        Transformo ideas en<br>
+        <em>presencia digital completa</em>
+      </h1>
+
+      <p class="hero-sub">
+        Desarrollo web profesional + Marketing en Meta + Fotografía y video con drone.
+        Todo en un solo lugar para negocios en Ocaña.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#contacto" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Trabajemos juntos
+        </a>
+        <a href="#proyectos" class="btn btn-outline">Ver proyectos →</a>
+      </div>
+
+      <div style="display:flex;justify-content:center;">
+        <div class="stats-strip">
+          <div class="stat-item"><span class="stat-num">3+</span><span class="stat-label">Años de experiencia</span></div>
+          <div class="stat-item"><span class="stat-num">15+</span><span class="stat-label">Proyectos completados</span></div>
+          <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Clientes satisfechos</span></div>
+          <div class="stat-item"><span class="stat-num">🚁</span><span class="stat-label">Drone disponible</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="section-tag">SERVICIOS</span>
+        <h2 class="section-title">Soluciones completas para tu negocio</h2>
+        <p class="section-sub">Desde una landing page hasta un ecosistema digital completo con fotografía y marketing — todo en un solo lugar.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="srv-card fade-up">
+          <span class="srv-icon">🌐</span>
+          <div class="srv-name">Landing Page Profesional</div>
+          <div class="srv-price">$400,000 COP</div>
+          <div class="srv-del">Entrega en 5 días hábiles</div>
+          <div class="photo-tag">📸 + Fotografía disponible</div>
+          <ul class="srv-features">
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Diseño responsive</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Optimizada para SEO</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Integración WhatsApp</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Hosting y dominio (1 año)</li>
+          </ul>
+        </div>
+
+        <div class="srv-card featured fade-up">
+          <div class="srv-top-badge badge-blue">⭐ Más popular</div>
+          <span class="srv-icon">📊</span>
+          <div class="srv-name">Gestión de Meta Ads</div>
+          <div class="srv-price">$300,000 / mes</div>
+          <div class="srv-del">+ presupuesto publicitario</div>
+          <div class="photo-tag">📸 + Fotografía disponible</div>
+          <ul class="srv-features">
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Diseño de anuncios creativos</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Segmentación de audiencia</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Optimización diaria</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Reportes semanales</li>
+          </ul>
+        </div>
+
+        <div class="srv-card fade-up">
+          <span class="srv-icon">💼</span>
+          <div class="srv-name">Sitio Web Completo</div>
+          <div class="srv-price">Desde $800,000</div>
+          <div class="srv-del">Tiempo según proyecto</div>
+          <div class="photo-tag">📸 + Fotografía disponible</div>
+          <ul class="srv-features">
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Diseño personalizado</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Panel de administración</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Integración redes sociales</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Soporte técnico incluido</li>
+          </ul>
+        </div>
+
+        <div class="srv-card fade-up">
+          <div class="srv-top-badge badge-green">✨ Nuevo</div>
+          <span class="srv-icon">📸</span>
+          <div class="srv-name">Fotografía & Video Profesional</div>
+          <div class="srv-price">Desde $250,000</div>
+          <div class="srv-del">Entrega según proyecto</div>
+          <ul class="srv-features" style="margin-top:22px;">
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fotografía profesional del negocio</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tomas aéreas con drone 🚁</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Edición profesional incluida</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Entrega en alta resolución</li>
+            <li><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ideal para web y redes sociales</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pkg-banner fade-up" style="margin-top:28px;">
+        <div>
+          <div class="pkg-eyebrow">🎁 PAQUETE COMPLETO</div>
+          <div class="pkg-title">Web + Fotografía + Meta Ads</div>
+          <p class="pkg-desc">Landing page profesional con sesión fotográfica completa (incluyendo drone) + primer mes de gestión de Meta Ads. Todo listo para lanzar tu presencia digital.</p>
+        </div>
+        <div class="pkg-right">
+          <div class="pkg-price">Desde $1.200.000</div>
+          <div class="pkg-save">Ahorra 20% · Todo en un solo lugar</div>
+          <a href="#contacto" class="btn btn-white">Consultar paquete</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="section-tag">PORTFOLIO</span>
+        <h2 class="section-title">Proyectos recientes</h2>
+        <p class="section-sub">Trabajo real con clientes locales — desde landing pages hasta sitios con fotografía aérea incluida.</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="proj-card fade-up">
+          <div class="proj-img">
+            <img src="Freedom_Hotel_Website.png" alt="Freedom Hotel — landing page con fotografía" loading="lazy">
+            <div class="proj-chip">📸 Con fotografía incluida</div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-name">Freedom Hotel</div>
+            <p class="proj-desc">Landing page para hotel boutique con sesión fotográfica profesional y tomas aéreas del entorno.</p>
+            <div class="tags">
+              <span class="tag tag-blue">Landing Page</span>
+              <span class="tag tag-blue">Diseño Web</span>
+              <span class="tag tag-orange">Fotografía + Drone</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card fade-up">
+          <div class="proj-img">
+            <img src="English_Teaching_2nd_fullpic.png" alt="English Teaching — academia de inglés" loading="lazy">
+          </div>
+          <div class="proj-body">
+            <div class="proj-name">English Teaching</div>
+            <p class="proj-desc">Sitio web profesional para academia de inglés con inscripciones en línea y diseño elegante oscuro.</p>
+            <div class="tags">
+              <span class="tag tag-blue">Landing Page</span>
+              <span class="tag tag-purple">Educación</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card fade-up">
+          <div class="proj-img">
+            <img src="Dona_Juana_WebSite.jpg" alt="Doña Juana — e-commerce con fotografía" loading="lazy">
+            <div class="proj-chip">📸 Fotografía de productos</div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-name">Doña Juana</div>
+            <p class="proj-desc">E-commerce con fotografía profesional de productos y experiencia de compra fluida y cuidada.</p>
+            <div class="tags">
+              <span class="tag tag-blue">E-commerce</span>
+              <span class="tag tag-blue">Tienda Online</span>
+              <span class="tag tag-orange">Fotografía</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resultados">
+    <div class="container">
+      <div class="results-inner">
+        <div class="fade-up">
+          <span class="section-tag">RESULTADOS COMPROBADOS</span>
+          <h2 class="section-title">Los números hablan</h2>
+          <div class="results-client">Campaña para Laboratorio Dental</div>
+          <p class="results-desc">Con una inversión mínima, logramos alcanzar a miles de personas en el área local y generar interacciones de calidad que se tradujeron en consultas reales para el negocio.</p>
+          <div class="results-highlight">
+            <div class="hl-label">Resultado clave</div>
+            <p class="hl-text">Con solo $14,53 USD en inversión, se alcanzaron más de 6.600 personas y se generaron 108 interacciones — un costo por resultado altamente eficiente para un negocio local en Ocaña.</p>
+          </div>
+        </div>
+
+        <div class="fade-up">
+          <div class="metrics-grid">
+            <div class="metric-box"><div class="metric-num" style="color:var(--blue);">$14,53</div><div class="metric-label">Inversión (USD)</div></div>
+            <div class="metric-box"><div class="metric-num" style="color:var(--purple);">6.623</div><div class="metric-label">Personas alcanzadas</div></div>
+            <div class="metric-box"><div class="metric-num" style="color:var(--green);">108</div><div class="metric-label">Interacciones totales</div></div>
+            <div class="metric-box"><div class="metric-num" style="color:var(--orange);">7</div><div class="metric-label">Clics al sitio web</div></div>
+          </div>
+          <div class="campaign-img-box">
+            <span>Captura real de la campaña en Meta Ads Manager</span>
+            <img src="Nmeros.jpg" alt="Resultados reales — campaña Meta Ads Laboratorio Dental" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="por-que">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="section-tag">¿POR QUÉ ELEGIRME?</span>
+        <h2 class="section-title">Todo en un solo lugar</h2>
+        <p class="section-sub">Sin coordinar entre múltiples proveedores. Una visión, un profesional, resultados coherentes.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card fade-up">
+          <div class="why-icon-wrap" style="background:var(--blue-light);">🎯</div>
+          <div class="why-title">Solución completa</div>
+          <p class="why-desc">No necesitas contratar diseñador, fotógrafo y marketero por separado. Todo lo que tu negocio necesita para destacar en digital, con una sola visión.</p>
+        </div>
+        <div class="why-card fade-up">
+          <div class="why-icon-wrap" style="background:var(--green-light);">📍</div>
+          <div class="why-title">Conocimiento local</div>
+          <p class="why-desc">Entiendo el mercado de Ocaña y Norte de Santander. Diseño estrategias que conectan con tu audiencia real, no plantillas genéricas para cualquier mercado.</p>
+        </div>
+        <div class="why-card fade-up">
+          <div class="why-icon-wrap" style="background:var(--purple-light);">📈</div>
+          <div class="why-title">Resultados comprobados</div>
+          <p class="why-desc">Portfolio real con clientes locales satisfechos. Métricas reales, no promesas vacías. Cada proyecto tiene historia y números que lo respaldan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="fade-up">
+          <h2 class="contact-heading">¿Listo para impulsar tu negocio?</h2>
+          <p class="contact-sub">Desde una simple landing page hasta un paquete completo con fotografía profesional y marketing. Cuéntame tu proyecto.</p>
+
+          <ul class="contact-list">
+            <li class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div><div class="ci-title">Ubicación</div><div class="ci-val">Ocaña, Norte de Santander</div></div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon">⏰</div>
+              <div><div class="ci-title">Disponibilidad</div><div class="ci-val">Lun – Vie, 9 AM – 6 PM</div></div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon">💬</div>
+              <div><div class="ci-title">WhatsApp</div><div class="ci-val">+57 310 231 0042</div></div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon">📧</div>
+              <div><div class="ci-title">Email</div><div class="ci-val">gutierrez.german@aol.com</div></div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon" style="background:var(--orange-light);">🚁</div>
+              <div><div class="ci-title">Fotografía con drone</div><div class="ci-val">Servicios aéreos disponibles</div></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-card fade-up">
+          <div class="form-title">Envíame un mensaje</div>
+          <form id="contactForm" onsubmit="sendToWhatsApp(event)" novalidate>
+            <div class="fg">
+              <label class="fl" for="nombre">Nombre completo</label>
+              <input class="fi" type="text" id="nombre" placeholder="Tu nombre completo" required>
+            </div>
+            <div class="fg">
+              <label class="fl" for="email">Email</label>
+              <input class="fi" type="email" id="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="fg">
+              <label class="fl" for="servicio">¿Qué servicio te interesa?</label>
+              <div class="select-wrap">
+                <select class="fs" id="servicio" required>
+                  <option value="" disabled selected>Selecciona un servicio</option>
+                  <option>Landing Page Profesional</option>
+                  <option>Gestión de Meta Ads</option>
+                  <option>Sitio Web Completo</option>
+                  <option>Fotografía y Video Profesional</option>
+                  <option>Paquete Completo (Web + Foto + Ads)</option>
+                  <option>Otro / Consultoría</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg">
+              <label class="fl" for="mensaje">Cuéntame sobre tu proyecto</label>
+              <textarea class="ft" id="mensaje" placeholder="¿Cuál es tu negocio? ¿Qué necesitas? ¿Tienes algún plazo o presupuesto estimado?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Enviar mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <div class="footer-mark">GP</div>
+            <span class="footer-name">German Piñeres</span>
+          </div>
+          <p class="footer-tagline">Desarrollo Web, Marketing Digital &amp; Fotografía Profesional</p>
+        </div>
+        <ul class="footer-nav">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 German Piñeres. Todos los derechos reservados.</span>
+        <span class="footer-copy">Servicios disponibles en Ocaña y Norte de Santander</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 24);
+    }, { passive: true });
+
+    function toggleMenu() {
+      const p = document.getElementById('mobilePanel');
+      p.style.display = p.style.display === 'block' ? 'none' : 'block';
+    }
+    function closeMenu() {
+      document.getElementById('mobilePanel').style.display = 'none';
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+    document.querySelectorAll('.services-grid, .projects-grid, .why-grid, .metrics-grid').forEach(grid => {
+      Array.from(grid.children).forEach((child, i) => { child.style.transitionDelay = (i * 80) + 'ms'; });
+    });
+
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      const nombre   = document.getElementById('nombre').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const servicio = document.getElementById('servicio').value;
+      const mensaje  = document.getElementById('mensaje').value.trim();
+      if (!nombre || !email || !servicio || !mensaje) return;
+      const text = [
+        '¡Hola German! Me llegaste a través de tu portafolio.',
+        '',
+        `*Nombre:* ${nombre}`,
+        `*Email:* ${email}`,
+        `*Servicio de interés:* ${servicio}`,
+        '',
+        `*Mi proyecto:*`,
+        mensaje
+      ].join('\n');
+      window.open('https://wa.me/573102310042?text=' + encodeURIComponent(text), '_blank');
+    }
+  </script>
+</body>
+</html>
