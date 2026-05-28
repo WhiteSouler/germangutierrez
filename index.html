@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
 
   <!-- Security headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com; img-src 'self'; connect-src 'self' https://vitals.vercel-insights.com; frame-src 'none'; object-src 'none';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -389,6 +389,9 @@
   <script src="script.js"></script>
 
   <!-- Vercel Speed Insights -->
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
   <!-- Vercel Web Analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
